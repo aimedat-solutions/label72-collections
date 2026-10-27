@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#351a2e">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self' https://api.github.com">
+<title>Photo Manager · Label 72</title>
+<link rel="stylesheet" href="./admin.css">
+<script defer src="./admin.js"></script>
+</head>
+<body>
+<header class="topbar"><div><span class="brand">LABEL 72</span><span class="subhead">COLLECTION STUDIO · ADMIN</span></div><a class="previewLink" href="../" target="_blank" rel="noopener noreferrer">View public gallery ↗</a></header>
+<main class="layout">
+ <section class="intro">
+  <p class="eyebrow">PHOTO MANAGER</p>
+  <h1>Make every design<br><em>look its best.</em></h1>
+  <p>Select a collection slot, upload its photo, preview the card crop, then publish directly to GitHub. The existing illustration remains the fallback until you add a photo.</p>
+ </section>
+ <section class="authbox" aria-labelledby="authTitle">
+  <div class="authTitle"><div><span class="step">01</span><h2 id="authTitle">Connect your GitHub account</h2></div><span id="connectionState" class="state">Not connected</span></div>
+  <p>Publishing requires a short-lived <b>fine-grained GitHub token</b> restricted to <code>aimedat-solutions/label72-collections</code>, with <b>Contents → Read and write</b>. Use your GitHub account to create one, then paste it below.</p>
+  <a class="hintLink" target="_blank" rel="noopener noreferrer" href="https://github.com/settings/personal-access-tokens/new">Create a restricted token on GitHub ↗</a>
+  <div class="tokenrow"><label for="tokenInput" class="sr-only">GitHub personal access token</label><input id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="Paste GitHub fine-grained token"><button id="connectBtn" class="button accent">Connect</button><button id="disconnectBtn" class="button light" disabled>Disconnect</button></div>
+  <p class="small muted"><b>Security:</b> Your token is held only in this page's memory, is never saved to local storage or the repository, and is discarded when you close or reload this tab. Never share your token with sales staff or customers.</p>
+ </section>
+ <section class="workspace">
+  <div class="workspaceHead"><div><span class="step">02</span><h2>Choose a collection slot</h2><p>Select which design will display your new photo.</p></div><span id="slotTotal" class="pill">12 slots</span></div>
+  <div class="slotGrid" id="slots" aria-label="Collection design slots"></div>
+ </section>
+ <section class="editor" aria-label="Image editor">
+  <div class="workspaceHead"><div><span class="step">03</span><h2 id="selectedTitle">Classic 4-Tuck Blouse</h2><p id="selectedSubtitle">Choose a photo for this slot.</p></div></div>
+  <div class="editorColumns">
+   <div class="previewBox"><div class="photoFrame" id="photoFrame"><canvas id="previewCanvas" width="900" height="1200" hidden></canvas><div id="placeholder" class="placeholder"><span>LABEL 72</span><strong>No photo chosen</strong><small>Existing design artwork stays visible until published</small></div></div><p class="muted small">Preview shows the exact 3:4 collection-card proportions.</p></div>
+   <div class="controls">
+    <label class="fieldLabel" for="photoInput">Garment photo</label><input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="uploadHelp"><p id="uploadHelp" class="small muted">JPG, PNG or WebP, up to 15 MB. Compressed into an optimized WebP image before upload.</p>
+    <label class="fieldLabel" for="fitMode">Photo fitting</label><select id="fitMode"><option value="contain">Keep entire photo (no crop)</option><option value="cover">Fill the card (centre crop)</option></select>
+    <label class="fieldLabel" for="photoKind">What is this photo?</label><select id="photoKind"><option value="reference">Design inspiration / placeholder</option><option value="work">Actual garment stitched by Label 72</option></select>
+    <p class="small muted">Customers will see a <b>REFERENCE PHOTO</b> or <b>LABEL 72 WORK</b> label accordingly.</p>
+    <button id="publishBtn" class="button accent full" disabled>Publish photo to collection</button>
+    <button id="removeBtn" class="button light full" disabled>Restore original illustration</button>
+    <p id="status" class="status" role="status" aria-live="polite">Choose a slot and upload a photo to begin.</p>
+   </div>
+  </div>
+ </section>
+ <section class="footnote"><h2>How updates work</h2><p>When you click Publish, this admin tool saves an optimized image to the GitHub repository and updates <code>photos.json</code>. GitHub Actions automatically republishes the collection. <b>Do not close the tab during an upload.</b> After the successful message, open the public gallery to check the published version.</p><p>If the upload fails, you can retry. The public gallery keeps its illustration or previously published photo until the new configuration is saved.</p></section>
+</main>
+<footer>LABEL 72 · Belagavi · Administrative publishing tool</footer>
+</body>
+</html>
