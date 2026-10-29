@@ -6,5 +6,9 @@
   "w1": {
     "src": "photos/w1.webp?v=1793278252346",
     "kind": "reference"
+  },
+  "b2": {
+    "src": "photos/b2.webp?v=1793279330279",
+    "kind": "reference"
   }
 }
