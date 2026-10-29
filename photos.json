@@ -2,5 +2,9 @@
   "w1": {
     "src": "photos/w1.webp?v=1793278252346",
     "kind": "reference"
+  },
+  "b1": {
+    "src": "photos/b1.webp?v=1793279273964",
+    "kind": "reference"
   }
 }
