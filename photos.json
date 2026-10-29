@@ -7,12 +7,16 @@
     "src": "photos/b2.webp?v=1793279330279",
     "kind": "reference"
   },
+  "b3": {
+    "src": "photos/b3.webp?v=1793279798554",
+    "kind": "work"
+  },
   "w1": {
     "src": "photos/w1.webp?v=1793278252346",
     "kind": "reference"
   },
-  "b3": {
-    "src": "photos/b3.webp?v=1793279798554",
+  "b4": {
+    "src": "photos/b4.webp?v=1793280058883",
     "kind": "work"
   }
 }
