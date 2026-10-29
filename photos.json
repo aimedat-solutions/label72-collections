@@ -3,12 +3,16 @@
     "src": "photos/b1.webp?v=1793279287062",
     "kind": "work"
   },
+  "b2": {
+    "src": "photos/b2.webp?v=1793279330279",
+    "kind": "reference"
+  },
   "w1": {
     "src": "photos/w1.webp?v=1793278252346",
     "kind": "reference"
   },
-  "b2": {
-    "src": "photos/b2.webp?v=1793279330279",
-    "kind": "reference"
+  "b3": {
+    "src": "photos/b3.webp?v=1793279798554",
+    "kind": "work"
   }
 }
